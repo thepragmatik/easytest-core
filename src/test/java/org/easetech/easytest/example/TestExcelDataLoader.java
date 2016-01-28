@@ -2,12 +2,11 @@
 package org.easetech.easytest.example;
 
 import javax.inject.Inject;
-import junit.framework.Assert;
+
 import org.easetech.easytest.annotation.DataLoader;
-import org.easetech.easytest.annotation.Display;
 import org.easetech.easytest.annotation.Intercept;
 import org.easetech.easytest.annotation.Param;
-import org.easetech.easytest.annotation.TestPolicy;
+import org.easetech.easytest.annotation.TestConfigProvider;
 import org.easetech.easytest.runner.DataDrivenTestRunner;
 import org.junit.After;
 import org.junit.Before;
@@ -19,6 +18,7 @@ import org.slf4j.LoggerFactory;
 
 @RunWith(DataDrivenTestRunner.class)
 @DataLoader(filePaths = { "classpath:org/easetech/data/testExcelData.xls" })
+@TestConfigProvider({TestConfigProviderClass.class})
 public class TestExcelDataLoader {
     
     @Intercept

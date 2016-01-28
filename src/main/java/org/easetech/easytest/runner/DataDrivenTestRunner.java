@@ -452,8 +452,8 @@ public class DataDrivenTestRunner extends BlockJUnit4ClassRunner {
         if(fieldInstance == null) {
             Assert.fail("Unable to get the instance value of field :" + field.getName() + 
                 ". Are you injecting the field using dependency injection support of Easytest? " +
-            		"Then, please check that the bean is configured in the configuration file. " +
-            		"If the problem persist, please contact anujkumar@easetech.org");
+            		"Then, please check that the bean is configured in the configuration file and the test suite annotated with @TestConfigProvider " +
+            		"If the problem persist, please log an issue at EasyTest's Github page.");
         }
         Object targetInstance = null;
 

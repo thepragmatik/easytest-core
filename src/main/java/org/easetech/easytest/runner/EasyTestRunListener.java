@@ -11,6 +11,7 @@
 
 package org.easetech.easytest.runner;
 
+import org.easetech.easytest.util.ConfigContext;
 import org.junit.internal.AssumptionViolatedException;
 import org.junit.runner.Description;
 import org.junit.runner.Result;
@@ -48,6 +49,7 @@ public class EasyTestRunListener extends RunListener {
     
     public void testRunFinished(Result result) throws Exception {
         LOG.debug("testRunStarted with Result : " + result);
+        ConfigContext.cleanConfigContext();
     }
     
     /**
